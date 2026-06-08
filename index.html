@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SDTEST® | Алгебра Совести</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #eef2f3;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            background: #f8f9fa;
+            border-color: #3498db;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="assets/sdtest_logo.png" style="height: 60px; border-radius: 50%;">
+            <div>
+                <h1>SDTEST®</h1>
+                <p>Платформа «Алгебра Совести»</p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <a href="modules/1_vector.html" class="card">
+                <h3>Модуль 1: Поведение</h3>
+                <p>Анализ видимых индикаторов.</p>
+            </a>
+            <a href="modules/2_matrix.html" class="card">
+                <h3>Модуль 2: Матрица связей</h3>
+                <p>Корреляции и влияние.</p>
+            </a>
+            <a href="simulation.html" class="card" style="grid-column: span 2; background: #3498db; color: white;">
+                <h3>Полный симулятор (SD-Navigator)</h3>
+                <p>Запуск полной модели DPM с каскадными эффектами.</p>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

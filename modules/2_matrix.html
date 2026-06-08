@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SDTEST® Модуль 2: Матрица связей</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #eef2f3;
+            margin: 0;
+            padding-bottom: 50px;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            margin: 15px 0;
+        }
+
+        .result-box {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 5px solid #3498db;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div style="display:flex; align-items:center; gap:15px;">
+            <img src="../assets/sdtest_logo.png" style="height: 40px; border-radius: 50%;">
+            <strong>SDTEST® | АЛГЕБРА СОВЕСТИ</strong>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Слой 2: Матрица связей</h1>
+        <label>Влияние мотивации (Опрос 3): <input type="range" id="p3" min="0" max="1" step="0.1" value="0.5"></label>
+        <label>Влияние ценностей (Опрос 4): <input type="range" id="p4" min="0" max="1" step="0.1" value="0.5"></label>
+        <button onclick="updateMatrix()">Рассчитать влияние на систему</button>
+
+        <div class="result-box" id="res">Измените параметры для расчета.</div>
+    </div>
+
+    <script src="../js/dpm_engine.js"></script>
+    <script>
+        function updateMatrix() {
+            let p3 = parseFloat(document.getElementById('p3').value);
+            let p4 = parseFloat(document.getElementById('p4').value);
+            let impact = calculateImpact(p3, p4);
+            document.getElementById('res').innerHTML =
+                `Прогноз: Дисциплина [${impact.discipline}], Результативность [${impact.performance}]`;
+        }
+    </script>
+</body>
+
+</html>
